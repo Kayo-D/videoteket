@@ -49,9 +49,8 @@ public class UI
     }
     public void AllCustomersInfoUI()
     {
-        Customer allCustomersInfo = new Customer();
+
         Console.WriteLine("Alla registrerade kunder: ");
-        Console.WriteLine(allCustomersInfo.ReturnAllCustomerInfo());
     }
 }
 }
