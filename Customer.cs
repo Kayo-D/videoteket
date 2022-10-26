@@ -1,8 +1,8 @@
 using Dapper;
 using MySqlConnector;
-using (var customerlist = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
 {
-    var customer = customerlist.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+    var customerList = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
 }
 public class Customer
 {
@@ -14,7 +14,7 @@ public class Customer
     public string Email { get; set; }
     public void CreateCustomer()
     {
-
+        
     }
     public void ReturnCustomerInfo()
     {

@@ -1,8 +1,8 @@
 using Dapper;
 using MySqlConnector;
-using (var movielist = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
 {
-    var movie = movielist.Query<Movie>("SELECT ID, Title_ID, Customer_ID, Store_Purchase_Date, Is_Retired, Rental_Price, Rent_Date, Return_Date FROM movie;").ToList();
+    var movieList = connection.Query<Movie>("SELECT ID, Title_ID, Customer_ID, Store_Purchase_Date, Is_Retired, Rental_Price, Rent_Date, Return_Date FROM movie;").ToList();
 }
 public class Movie
 {
