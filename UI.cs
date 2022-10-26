@@ -38,8 +38,8 @@ public class UI
     {
         Customer customerInfo = new Customer();
         Console.WriteLine("Vem vill du söka på i databasen?");
-        input = Console.ReadLine();
-        customerInfo;
+        string input = Console.ReadLine();
+        Console.WriteLine(customerInfo.ReturnCustomerInfo(input));
     }
 }
 }
