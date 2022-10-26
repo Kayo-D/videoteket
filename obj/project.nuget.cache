@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4RC31S4Kzr2u7ajsma4yA/azjf71JXmhbWBDSkV3bl94qT+0+TA0U+paL61Rz4i3y4+ROQD10InQHsUfRZ3nvw==",
+  "dgSpecHash": "eYWmv71QRYbVcZ8ft65K1lfXKEREPhOykC56NO6dABQXuSbqD8/6anH5fytn8wjbGuEOlPpYRnpirG+nTFqGAg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj",
+  "projectFilePath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\belle\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\belle\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
+    "C:\\Users\\cw94\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\cw94\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
   ],
   "logs": []
 }

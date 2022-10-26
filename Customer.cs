@@ -36,22 +36,12 @@ namespace Videoteket
                 return errormessage;
             }
         }
-        public string ReturnAllCustomerInfo(string input)
+        public List<Customer> ReturnAllCustomerInfo()
         {
             using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
             {
-                string info;
-                string errormessage = "This is not the customer you are looking for";
-                var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-                foreach (Customer c in customerInfo)
-                {
-                    if (input == c.Name)
-                    {
-                        info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
-                        return info;
-                    }
-                }
-                return errormessage;
+                List<Customer> customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+                return customerInfo;
             }
         }
     }

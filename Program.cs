@@ -12,8 +12,8 @@ namespace Videoteket
             
             //Testa inom dessa
             UI menu = new UI();
-            
-                menu.MenuUI();
+
+            menu.MenuUI();
         }
     }
     /* {

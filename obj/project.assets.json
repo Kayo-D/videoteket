@@ -5,19 +5,27 @@
       "Dapper/2.0.123": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Dapper.dll": {}
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Dapper.dll": {}
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MySqlConnector/2.1.13": {
         "type": "package",
         "compile": {
-          "lib/net6.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -78,19 +86,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\belle\\.nuget\\packages\\": {}
+    "C:\\Users\\cw94\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj",
+      "projectUniqueName": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj",
       "projectName": "videoteket",
-      "projectPath": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj",
-      "packagesPath": "C:\\Users\\belle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\obj\\",
+      "projectPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj",
+      "packagesPath": "C:\\Users\\cw94\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\belle\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -129,7 +137,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -138,7 +147,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
