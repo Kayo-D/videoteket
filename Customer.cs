@@ -9,15 +9,32 @@ public class Customer
     public string Social_Security_Number { get; set; }
     public string Phone_Number { get; set; }
     public string Email { get; set; }
-    public void CreateCustomer()
-    {
-
-    }
-    public void ReturnCustomerInfo()
+    public void CreateCustomer(string Name, string Address, string Social_Security_Number, string Phone_Number, string Email)
     {
         using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
         {
-            var customer = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            
+        }
+    }
+    public string ReturnCustomerInfo(string input)
+    {
+        using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+        {
+            string info;
+            string errormessage = "This is not the customer you are looking for";
+            var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            foreach(Customer c in customer)
+            {
+                if(input == c.Name)
+                {
+                    info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
+                    return info;
+                }
+            }
+            return errormessage;
         }
     }
 }
+//Customer c = new Customer();
+//c.CreateCustomer("måns","Varbergsvägen4","941106","0709784512","månsarn@hotmail.com");
+//INSERT INTO `customer` (`ID`, `Name`, `Address`, `Social_Security_Number`, `Phone_Number`, `Email`) VALUES (NULL, 'Måns', 'Varbergsvägen4', '941106', '0709784512', 'månsarn@hotmail.com');
