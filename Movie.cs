@@ -1,5 +1,3 @@
-using Dapper;
-using MySqlConnector;
 public class Movie
 {
     public int ID { get; set; }
