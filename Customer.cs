@@ -1,8 +1,9 @@
-/* Funktioner
-
-ReturnCustomerInfo(Customer)
-CreateCustomer(Customer)
- */
+using Dapper;
+using MySqlConnector;
+using (var customerlist = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+{
+    var customer = customerlist.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+}
 public class Customer
 {
     public int ID { get; set; }
@@ -11,4 +12,12 @@ public class Customer
     public string Social_Security_Number { get; set; }
     public string Phone_Number { get; set; }
     public string Email { get; set; }
+    public void CreateCustomer()
+    {
+
+    }
+    public void ReturnCustomerInfo()
+    {
+
+    }
 }
