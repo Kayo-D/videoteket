@@ -18,14 +18,14 @@ namespace Videoteket
                 connection.Query($"INSERT INTO customer (Name, Address, Social_Security_Number, Phone_Number, Email) VALUES ('{Name}', '{Address}', '{Social_Security_Number}', '{Phone_Number}', '{Email}');");
             }
         }
-        /* public string ReturnCustomerInfo(string input)
+        public string ReturnCustomerInfo(string input)
         {
             using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
             {
                 string info;
                 string errormessage = "This is not the customer you are looking for";
-                var customerInfoInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-                foreach (Customer c in customer)
+                var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+                foreach (Customer c in customerInfo)
                 {
                     if (input == c.Name)
                     {
@@ -35,7 +35,25 @@ namespace Videoteket
                 }
                 return errormessage;
             }
-        } */
+        }
+        public string ReturnAllCustomerInfo(string input)
+        {
+            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+            {
+                string info;
+                string errormessage = "This is not the customer you are looking for";
+                var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+                foreach (Customer c in customerInfo)
+                {
+                    if (input == c.Name)
+                    {
+                        info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
+                        return info;
+                    }
+                }
+                return errormessage;
+            }
+        }
     }
 }
 //Customer c = new Customer();
