@@ -3,40 +3,40 @@ using MySqlConnector;
 using static System.Console;
 namespace Videoteket
 {
-public class Customer
-{
-    public int ID { get; set; }
-    public string Name { get; set; }
-    public string Address { get; set; }
-    public string Social_Security_Number { get; set; }
-    public string Phone_Number { get; set; }
-    public string Email { get; set; }
-    public void CreateCustomer(string Name, string Address, string Social_Security_Number, string Phone_Number, string Email)
+    public class Customer
     {
-        using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Social_Security_Number { get; set; }
+        public string Phone_Number { get; set; }
+        public string Email { get; set; }
+        public void CreateCustomer(string Name, string Address, string Social_Security_Number, string Phone_Number, string Email)
         {
-            
-        }
-    }
-    public string ReturnCustomerInfo(string input)
-    {
-        using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
-        {
-            string info;
-            string errormessage = "This is not the customer you are looking for";
-            var customerInfoInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-            foreach(Customer c in customer)
+            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
             {
-                if(input == c.Name)
-                {
-                    info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
-                    return info;
-                }
+                connection.Query($"INSERT INTO customer (Name, Address, Social_Security_Number, Phone_Number, Email) VALUES ('{Name}', '{Address}', '{Social_Security_Number}', '{Phone_Number}', '{Email}');");
             }
-            return errormessage;
         }
+        /* public string ReturnCustomerInfo(string input)
+        {
+            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+            {
+                string info;
+                string errormessage = "This is not the customer you are looking for";
+                var customerInfoInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+                foreach (Customer c in customer)
+                {
+                    if (input == c.Name)
+                    {
+                        info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
+                        return info;
+                    }
+                }
+                return errormessage;
+            }
+        } */
     }
-}
 }
 //Customer c = new Customer();
 //c.CreateCustomer("måns","Varbergsvägen4","941106","0709784512","månsarn@hotmail.com");
