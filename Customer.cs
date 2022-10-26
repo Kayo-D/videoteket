@@ -17,7 +17,7 @@ public class Customer
     {
         using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
         {
-            var customer = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;");
+            var customer = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
         }
     }
 }
