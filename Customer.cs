@@ -1,6 +1,8 @@
 using Dapper;
 using MySqlConnector;
 using static System.Console;
+namespace Videoteket
+{
 public class Customer
 {
     public int ID { get; set; }
@@ -17,7 +19,8 @@ public class Customer
     {
         using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
         {
-            var customer = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
         }
     }
+}
 }

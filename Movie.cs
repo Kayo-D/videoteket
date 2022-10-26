@@ -1,3 +1,5 @@
+namespace Videoteket
+{
 public class Movie
 {
     public int ID { get; set; }
@@ -44,4 +46,5 @@ public class Movie
     {
 
     }
+}
 }
