@@ -1,6 +1,8 @@
 using Dapper;
 using MySqlConnector;
 using static System.Console;
+namespace Videoteket
+{
 public class Customer
 {
     public int ID { get; set; }
@@ -22,7 +24,7 @@ public class Customer
         {
             string info;
             string errormessage = "This is not the customer you are looking for";
-            var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            var customerInfoInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
             foreach(Customer c in customer)
             {
                 if(input == c.Name)
@@ -34,6 +36,7 @@ public class Customer
             return errormessage;
         }
     }
+}
 }
 //Customer c = new Customer();
 //c.CreateCustomer("måns","Varbergsvägen4","941106","0709784512","månsarn@hotmail.com");
