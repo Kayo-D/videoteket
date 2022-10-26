@@ -1,4 +1,4 @@
-/* 
+/* Funktioner
 
 CheckBarcode(Movie)
 CheckIfRetired(Movie)
