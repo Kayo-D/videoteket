@@ -12,4 +12,8 @@ public class UI
     {
 
     }
+    public void CustomerInfoUI()
+    {
+        
+    }
 }

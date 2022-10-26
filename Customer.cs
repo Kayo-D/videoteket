@@ -17,11 +17,7 @@ public class Customer
     {
         using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
         {
-            var customerList = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-            foreach (Customer c in customerList)
-            {
-                WriteLine(c.Name);
-            }
+            var customer = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;");
         }
     }
 }
