@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj": {}
+    "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj": {}
   },
   "projects": {
-    "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj": {
+    "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj",
+        "projectUniqueName": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj",
         "projectName": "videoteket",
-        "projectPath": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\videoteket.csproj",
-        "packagesPath": "C:\\Users\\belle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\belle\\Documents\\SUVNET22\\Databaser\\Videoteket\\videoteket\\obj\\",
+        "projectPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\videoteket.csproj",
+        "packagesPath": "C:\\Users\\cw94\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cw94\\Desktop\\Skolarbeten\\Videoteket\\videoteket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\belle\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\cw94\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +53,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\belle\\AppData\\Roaming\\.dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
