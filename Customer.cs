@@ -29,7 +29,7 @@ namespace Videoteket
                 {
                     if (input == c.Name)
                     {
-                        info = c.Name + c.Address + c.Social_Security_Number + c.Phone_Number + c.Email;
+                        info = c.Name + " " + c.Address + " " + c.Social_Security_Number + " " + c.Phone_Number + " " + c.Email;
                         return info;
                     }
                 }
