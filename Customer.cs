@@ -27,7 +27,7 @@ namespace Videoteket
                 var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
                 foreach (Customer c in customerInfo)
                 {
-                    if (input == c.Name)
+                    if (input == c.Name || input == c.Address || input == c.Social_Security_Number || input == c.Phone_Number || input == c.Email)
                     {
                         info = c.Name + " " + c.Address + " " + c.Social_Security_Number + " " + c.Phone_Number + " " + c.Email;
                         return info;
