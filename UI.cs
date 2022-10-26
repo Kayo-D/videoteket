@@ -3,26 +3,28 @@ namespace Videoteket
 public class UI
 {
     static ConsoleKey menuKeys = ConsoleKey.NoName;
-    Customer customerInfo = new Customer();
     public void MenuUI()
     {
-        Console.WriteLine("VIDEOTEKET");
-        Console.WriteLine("1. ");
-        Console.WriteLine("2. ");
-        Console.WriteLine("3. ");
-        Console.WriteLine("4. Check customer info.");
-        menuKeys = Console.ReadKey(true).Key;
-
-        switch (menuKeys)
+        while (true)
         {
-            case ConsoleKey.D4:
-            CustomerInfoUI();
-            break;
+            Console.WriteLine("VIDEOTEKET");
+            Console.WriteLine("1. ");
+            Console.WriteLine("2. ");
+            Console.WriteLine("3. ");
+            Console.WriteLine("4. Check customer info.");
+            menuKeys = Console.ReadKey(true).Key;
 
-            default:
-            break;
+            switch (menuKeys)
+            {
+                case ConsoleKey.D4:
+                CustomerInfoUI();
+                Console.ReadKey();
+                break;
+
+                default:
+                break;
+            }
         }
-
     }
     public void CreateReceipt()
     {
@@ -34,7 +36,10 @@ public class UI
     }
     public void CustomerInfoUI()
     {
-        Console.WriteLine(customerInfo);
+        Customer customerInfo = new Customer();
+        Console.WriteLine("Vem vill du söka på i databasen?");
+        input = Console.ReadLine();
+        customerInfo;
     }
 }
 }
