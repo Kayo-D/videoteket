@@ -9,7 +9,7 @@ public class Customer
     public string Social_Security_Number { get; set; }
     public string Phone_Number { get; set; }
     public string Email { get; set; }
-    private var customerList = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+    private List<Customer> customerList = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
     public void CreateCustomer()
     {
         

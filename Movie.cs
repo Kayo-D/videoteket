@@ -1,9 +1,6 @@
 using Dapper;
 using MySqlConnector;
-using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
-{
-    var movieList = connection.Query<Movie>("SELECT ID, Title_ID, Customer_ID, Store_Purchase_Date, Is_Retired, Rental_Price, Rent_Date, Return_Date FROM movie;").ToList();
-}
+using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"));
 public class Movie
 {
     public int ID { get; set; }
@@ -14,6 +11,7 @@ public class Movie
     public float Rental_Price { get; set; }
     public DateTime Rent_Date { get; set; }
     public DateTime Return_Date { get; set; }
+    private List<Movie> movieList = connection.Query<Movie>("SELECT ID, Title_ID, Customer_ID, Store_Purchase_Date, Is_Retired, Rental_Price, Rent_Date, Return_Date FROM movie;").ToList();
     public void CheckBarcode()
     {
 
@@ -39,10 +37,6 @@ public class Movie
 
     }
     public void RetireMovie()
-    {
-
-    }
-    public void ChangeStockAmount()
     {
 
     }
