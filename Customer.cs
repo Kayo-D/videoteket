@@ -1,6 +1,5 @@
 using Dapper;
 using MySqlConnector;
-using static System.Console;
 namespace Videoteket
 {
     public class Customer
@@ -11,41 +10,35 @@ namespace Videoteket
         public string Social_Security_Number { get; set; }
         public string Phone_Number { get; set; }
         public string Email { get; set; }
+        public MySqlConnection Connection()
+        {
+            MySqlConnection connection = new();
+            connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;");
+            return connection;
+        }
         public void CreateCustomer(string Name, string Address, string Social_Security_Number, string Phone_Number, string Email)
         {
-            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
-            {
-                connection.Query($"INSERT INTO customer (Name, Address, Social_Security_Number, Phone_Number, Email) VALUES ('{Name}', '{Address}', '{Social_Security_Number}', '{Phone_Number}', '{Email}');");
-            }
+            Connection().Query($"INSERT INTO customer (Name, Address, Social_Security_Number, Phone_Number, Email) VALUES ('{Name}', '{Address}', '{Social_Security_Number}', '{Phone_Number}', '{Email}');");
         }
         public string ReturnCustomerInfo(string input)
         {
-            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
+            string info;
+            string errormessage = "This is not the customer you are looking for";
+            var customerInfo = Connection().Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            foreach (Customer c in customerInfo)
             {
-                string info;
-                string errormessage = "This is not the customer you are looking for";
-                var customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-                foreach (Customer c in customerInfo)
+                if (input == c.Name || input == c.Address || input == c.Social_Security_Number || input == c.Phone_Number || input == c.Email)
                 {
-                    if (input == c.Name || input == c.Address || input == c.Social_Security_Number || input == c.Phone_Number || input == c.Email)
-                    {
-                        info = c.Name + " " + c.Address + " " + c.Social_Security_Number + " " + c.Phone_Number + " " + c.Email;
-                        return info;
-                    }
+                    info = c.Name + " " + c.Address + " " + c.Social_Security_Number + " " + c.Phone_Number + " " + c.Email;
+                    return info;
                 }
-                return errormessage;
             }
+            return errormessage;
         }
         public List<Customer> ReturnAllCustomerInfo()
         {
-            using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"))
-            {
-                List<Customer> customerInfo = connection.Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
-                return customerInfo;
-            }
+            List<Customer> customerInfo = Connection().Query<Customer>("SELECT ID, Name, Address, Social_Security_Number, Phone_Number, Email FROM customer;").ToList();
+            return customerInfo;
         }
     }
 }
-//Customer c = new Customer();
-//c.CreateCustomer("måns","Varbergsvägen4","941106","0709784512","månsarn@hotmail.com");
-//INSERT INTO `customer` (`ID`, `Name`, `Address`, `Social_Security_Number`, `Phone_Number`, `Email`) VALUES (NULL, 'Måns', 'Varbergsvägen4', '941106', '0709784512', 'månsarn@hotmail.com');

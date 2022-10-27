@@ -9,7 +9,8 @@ namespace Videoteket
         private static void Main(string[] args)
         {
             //Testa inom dessa
-            
+            Movie m = new();
+            m.RetireMovie(1);
             //Testa inom dessa
             UI menu = new UI();
 
