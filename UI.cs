@@ -51,7 +51,7 @@ public class UI
     {
         Customer customerInfo = new Customer();
         Console.WriteLine("Alla registrerade kunder: ");
-        customerInfo.ReturnAllCustomerInfo();
+        Console.WriteLine(customerInfo.ReturnAllCustomerInfo());
     }
 }
 }
