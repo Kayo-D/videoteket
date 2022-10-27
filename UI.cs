@@ -49,9 +49,14 @@ public class UI
     }
     public void AllCustomersInfoUI()
     {
+        List<Customer> allcustomers = new();
         Customer customerInfo = new Customer();
         Console.WriteLine("Alla registrerade kunder: ");
-        Console.WriteLine(customerInfo.ReturnAllCustomerInfo());
+        allcustomers = customerInfo.ReturnAllCustomerInfo();
+        foreach(var item in allcustomers)
+        {
+            Console.WriteLine(item.Name + " " + item.Address + " " + item.Social_Security_Number + " " + item.Phone_Number + " " + item.Email);
+        }
     }
 }
 }
