@@ -9,8 +9,7 @@ namespace Videoteket
         private static void Main(string[] args)
         {
             //Testa inom dessa
-            
-            Environment.Exit(0);
+
             //Testa inom dessa
             UI menu = new UI();
 
