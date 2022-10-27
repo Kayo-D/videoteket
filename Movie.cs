@@ -47,13 +47,40 @@ namespace Videoteket
         {
             Connection().Query($"UPDATE movie SET Is_Retired = 1 WHERE movie.ID = {ID}");
         }
-        public void RemoveMovie()
+        public void RemoveMovie(int ID)
         {
-
+            Connection().Query($"DELETE FROM movie WHERE `movie`.`ID` = {ID}");
         }
-        public void CheckForLateReturns()
+        public bool CheckForLateReturns()
         {
-
+            DateTime today = DateTime.Now;
+            DateTime min = new();
+            List<Movie> moviesInDatabase = Connection().Query<Movie>($"SELECT ID, Return_Date FROM movie").ToList();
+            foreach (var item in moviesInDatabase)
+            {
+                int value = DateTime.Compare(item.Return_Date, today);
+                if (value < 0 && item.Return_Date != min)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public List<Movie> ReturnLateMoviesList()
+        {
+            DateTime today = DateTime.Now;
+            DateTime min = new();
+            List<Movie> returnList = new();
+            List<Movie> moviesInDatabase = Connection().Query<Movie>($"SELECT ID, Return_Date FROM movie").ToList();
+            foreach (var item in moviesInDatabase)
+            {
+                int value = DateTime.Compare(item.Return_Date, today);
+                if (value < 0 && item.Return_Date != min)
+                {
+                    returnList.Add(item);
+                }
+            }
+            return returnList;
         }
     }
 }
