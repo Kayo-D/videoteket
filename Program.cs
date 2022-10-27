@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using MySqlConnector;
 using static System.Console;
-//using (var connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;"));
 namespace Videoteket
 {
     internal class program
