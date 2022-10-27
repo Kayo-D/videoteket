@@ -18,28 +18,40 @@ namespace Videoteket
             connection = new MySqlConnection("Server=localhost;Database=videoteket;Uid=root;");
             return connection;
         }
-        public void CheckBarcode()
+        public bool CheckBarcodeIfRented(int ID)
         {
-
+            List<Movie> moviesInDatabase = Connection().Query<Movie>($"SELECT ID, Customer_ID FROM movie").ToList();
+            foreach (var item in moviesInDatabase)
+            {
+                if (item.Customer_ID != 0 && item.ID == ID)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
-        public void CheckIfRetired()
+        public bool CheckIfRetired(int ID)
         {
-
-        }
-        public void ChangeStockAmount()
-        {
-
+            List<Movie> moviesInDatabase = Connection().Query<Movie>($"SELECT ID, Is_Retired FROM movie").ToList();
+            foreach (var item in moviesInDatabase)
+            {
+                if (item.Is_Retired == true && item.ID == ID)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         public void HireMovie()
         {
 
         }
-        public void ReturnMovie()
+        public void ReturnMovie(int ID)
         {
-
+            Connection().Query($"UPDATE movie SET Customer_ID = 0, WHERE movie.id = {ID}");
         }
         //Ändra så att man skriver in titelns namn och inte Title_ID
-        public void AddMovie(int Title_ID, DateTime Store_Purchase_Date, bool Is_Retired, float Rental_Price)
+        public void AddMovie(string Title, DateTime Store_Purchase_Date, bool Is_Retired, float Rental_Price)
         {
             Connection().Query($"INSERT INTO movie (Title_ID, Store_Purchase_Date, Is_Retired, Rental_Price) VALUES ('{Title_ID}', '{Store_Purchase_Date}', '{Is_Retired}', '{Rental_Price}');");
         }
