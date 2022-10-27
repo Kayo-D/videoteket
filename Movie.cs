@@ -51,7 +51,7 @@ namespace Videoteket
             Connection().Query($"UPDATE movie SET Customer_ID = 0, WHERE movie.id = {ID}");
         }
         //Ändra så att man skriver in titelns namn och inte Title_ID
-        public void AddMovie(string Title, DateTime Store_Purchase_Date, bool Is_Retired, float Rental_Price)
+        public void AddMovie(string Title_ID, DateTime Store_Purchase_Date, bool Is_Retired, float Rental_Price)
         {
             Connection().Query($"INSERT INTO movie (Title_ID, Store_Purchase_Date, Is_Retired, Rental_Price) VALUES ('{Title_ID}', '{Store_Purchase_Date}', '{Is_Retired}', '{Rental_Price}');");
         }
