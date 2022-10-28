@@ -30,6 +30,7 @@ public class UI
                 default:
                 break;
             }
+            
         }
     }
     public void CreateReceipt()
@@ -42,6 +43,7 @@ public class UI
     }
     public void CustomerInfoUI()
     {
+        Console.Clear();
         Customer customerInfo = new Customer();
         Console.WriteLine("Vem vill du söka på i databasen?");
         string input = Console.ReadLine();
@@ -49,6 +51,7 @@ public class UI
     }
     public void AllCustomersInfoUI()
     {
+        Console.Clear();
         List<Customer> allcustomers = new();
         Customer customerInfo = new Customer();
         Console.WriteLine("Alla registrerade kunder: ");
